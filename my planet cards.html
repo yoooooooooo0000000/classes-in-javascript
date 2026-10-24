@@ -1,0 +1,108 @@
+<html>
+    <head>
+  <style>
+    body {
+        font-family: Arial;
+        background-color: #f0f4ff;
+        padding: 30px;
+        text-align: center;
+}
+h1 { color: #ff5a43; }
+p { color: #555; }
+.cards {
+display: flex;
+justify-content: center;
+gap: 20px;
+    }
+
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 0.2rem;
+    }
+
+    p {
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    button:hover {
+      background: #0369a1;
+      transform: translateY(-1px);
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      border: 1px solid #475569;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 240px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    }
+
+    .planet-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.4rem;
+    }
+
+    .planet-fact {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>My Planet Cards</h1>
+<p>Use a JavaScript class to build planet cards!</p>
+<button onclick="showPlanets()">Show Planets!</button>
+<div class="cards">
+<div id="card1"></div>
+</div>
+<script>
+    class Planet {
+constructor (name, fact) {
+this.name = name;
+this.fact = fact;
+}
+describe() {
+return this.name + ": " + this.fact;
+}
+}
+function showPlanets() {
+let p1 = new Planet("Earth", "The only planet with life");
+document.getElementById("card1").innerHTML =
+"<div class='card'><div class='planet-name'>" + p1.name + "</div>" +
+"<div class='planet-fact'>" + p1.describe() + "</div></div>";
+}
+</script>
+</body>
+</html>
